@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.Todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  margin-top: 50px;
+  padding: 15px 30px;
+  max-width: 100%;
+  width: 700px;
+  /* background: red; */
+}

@@ -1,0 +1,12 @@
+.IndexTodo {
+  width: 50em;
+  max-width: 100%;
+  margin-inline: auto;
+  padding-block: 2em;
+  padding-inline: 1em;
+}
+.h2 {
+  text-align: center;
+  color: rgb(30, 60, 150, 0.8);
+  margin-bottom: 0.5em;
+}

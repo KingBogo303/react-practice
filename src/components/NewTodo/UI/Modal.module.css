@@ -1,0 +1,41 @@
+.backdrop {
+  backdrop-filter: blur(1.5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.7);
+}
+.modal {
+  position: fixed;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30em;
+  max-width: 80%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgb(138, 138, 138);
+}
+.modalTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 10px;
+}
+.close {
+  background-color: #bababa;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.35s;
+}
+.close:hover {
+  color: #bababa;
+  background-color: #101010;
+}
+.modalBody {
+  padding-block: 10px;
+}

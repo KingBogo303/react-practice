@@ -1,0 +1,12 @@
+.card {
+  width: 90%;
+  max-width: 50rem;
+  margin-bottom: 2rem;
+  margin-inline: auto;
+  /* justify-content: center; */
+  padding: 1.5rem;
+  border-radius: 10px;
+  background-color: rgb(127, 255, 212);
+  height: fit-content;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}

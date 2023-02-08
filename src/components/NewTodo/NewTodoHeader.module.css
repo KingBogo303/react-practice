@@ -1,0 +1,21 @@
+.NewTodoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.button {
+  background-color: rgba(111, 71, 255, 0.853);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: none;
+  font-size: 16px;
+  padding: 10px 15px;
+}
+.select {
+  padding: 5px;
+  width: 120px;
+  border-radius: 7px;
+  padding: 9px 15px 9px 7px;
+  border: none;
+}

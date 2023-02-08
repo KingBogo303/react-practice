@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.title {
+  background-color: rgb(128, 40, 69);
+  margin-block: 15px;
+  padding: 10px 20px;
+  border-radius: 3px;
+  color: #fff;
+  font-weight: 400;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.103);
+  transition: 0.35s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.del {
+  background-color: rgb(236, 236, 236);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.container {
+  transition: 0.4s;
+}
+.emptyTasks {
+  text-align: center;
+}
+.completed.title {
+  background-color: rgb(55, 128, 40);
+}
