@@ -4,9 +4,9 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import TodoComponent from "./components/Todo/TodoComponent";
-import UserComponent from "./components/User/UserComponent";
-import IndexTodo from "./components/NewTodo/IndexTodo";
+import TodoComponent from "./Projects/Todo/TodoComponent";
+import UserComponent from "./Projects/User/UserComponent";
+import IndexTodo from "./Projects/NewTodo/IndexTodo";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
