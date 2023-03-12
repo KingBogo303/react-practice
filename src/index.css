@@ -20,3 +20,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.header {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding: 30px 7%;
+  background-color: #565656;
+}
+.header a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #fff;
+}

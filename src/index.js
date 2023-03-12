@@ -7,16 +7,23 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TodoComponent from "./Projects/Todo/TodoComponent";
 import UserComponent from "./Projects/User/UserComponent";
 import IndexTodo from "./Projects/NewTodo/IndexTodo";
+import LoginForm from "./Projects/Login/LoginForm";
+import { Link } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
   <BrowserRouter>
+    <div className="header">
+      <Link to="/">Home</Link>
+    </div>
     <Routes>
       <Route element={<App />} path="/" />
       <Route element={<TodoComponent />} path="/todo" />
       <Route element={<UserComponent />} path="/user" />
       <Route element={<IndexTodo />} path="/newTodo" />
+      <Route element={<IndexTodo />} path="/newTodo" />
+      <Route element={<LoginForm />} path="/loginForm" />
     </Routes>
   </BrowserRouter>
   // </React.StrictMode>
