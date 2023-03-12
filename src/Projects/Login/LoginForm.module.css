@@ -36,3 +36,10 @@
   color: #fff;
   background-color: darkslategray;
 }
+.success {
+  color: green;
+  text-align: center;
+}
+.view {
+  font-size: 16px;
+}
