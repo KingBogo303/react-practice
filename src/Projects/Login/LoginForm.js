@@ -6,25 +6,35 @@ const LoginForm = () => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [IsSubmit, setIsSubmit] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleReset = () => {
     setFormValues(initialValues);
+    setIsSubmit(false);
+    setSuccess(false);
+    setFormErrors({});
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues((prevState) => ({ ...prevState, [name]: value }));
   };
-  // useEffect(() => {
-  //   setFormErrors(validate(formValues));
-  // }, [formValues]);
+  useEffect(() => {
+    if (IsSubmit) {
+      setFormErrors(validate(formValues));
+    } else {
+      return;
+    }
+  }, [formValues, IsSubmit]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
+    if (Object.keys(formErrors).length === 0 && IsSubmit) {
+      setSuccess(true);
+    }
     setIsSubmit(true);
   };
 
-  // if (Object.keys(formErrors).length === 0)
   const validate = (values) => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
@@ -48,7 +58,7 @@ const LoginForm = () => {
 
   return (
     <div className={styles.LoginForm}>
-      {Object.keys(formErrors).length === 0 && IsSubmit ? (
+      {Object.keys(formErrors).length === 0 && IsSubmit && success ? (
         <p className={`${styles.success} ${styles.view}`}>
           Submission Successful
         </p>
@@ -93,7 +103,9 @@ const LoginForm = () => {
           <small className={styles.error}>{formErrors.password}</small>
         </div>
         <div className={styles.btn_bx}>
-          <button onClick={handleReset}>Reset</button>
+          <button onClick={handleReset} type="reset">
+            Reset
+          </button>
           <button type="submit">Submit</button>
         </div>
       </form>
