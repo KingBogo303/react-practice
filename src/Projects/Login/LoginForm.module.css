@@ -24,4 +24,15 @@
   margin-bottom: 1.5rem;
 }
 .btn_bx {
+  display: flex;
+  justify-content: space-between;
+}
+.btn_bx button {
+  padding: 7px 14px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.btn_bx button[type="submit"] {
+  color: #fff;
+  background-color: darkslategray;
 }

@@ -5,6 +5,10 @@ const LoginForm = () => {
   const initialValues = { username: "", email: "", password: "" };
   const [formValues, setFormValues] = useState(initialValues);
 
+  const handleReset = () => {
+    setFormValues(initialValues);
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     // setFormValues({})
@@ -13,7 +17,7 @@ const LoginForm = () => {
   return (
     <div className={styles.LoginForm}>
       <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={} >
         <h2 className={styles.head}>Login Form</h2>
         <div className={styles.box}>
           <label htmlFor="username">Username</label>
@@ -46,8 +50,8 @@ const LoginForm = () => {
           />
         </div>
         <div className={styles.btn_bx}>
-          <button type="reset"></button>
-          <button type="submit"></button>
+          <button onClick={handleReset}>Reset</button>
+          <button type="submit">Submit</button>
         </div>
       </form>
     </div>
