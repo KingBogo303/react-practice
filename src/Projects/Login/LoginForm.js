@@ -106,7 +106,14 @@ const LoginForm = () => {
           <button onClick={handleReset} type="reset">
             Reset
           </button>
-          <button type="submit">Submit</button>
+          <button
+            type="submit"
+            disabled={
+              Object.keys(formErrors).length === 0 && IsSubmit && success
+            }
+          >
+            Submit
+          </button>
         </div>
       </form>
     </div>

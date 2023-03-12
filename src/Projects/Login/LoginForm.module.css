@@ -36,6 +36,10 @@
   color: #fff;
   background-color: darkslategray;
 }
+.btn_bx button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
 .success {
   padding: 1rem;
   background-color: rgba(0, 203, 0, 0.126);
