@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./LoginForm.module.css";
 
 const LoginForm = () => {
@@ -14,15 +14,17 @@ const LoginForm = () => {
     const { name, value } = e.target;
     setFormValues((prevState) => ({ ...prevState, [name]: value }));
   };
+  // useEffect(() => {
+  //   setFormErrors(validate(formValues));
+  // }, [formValues]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
-    if (Object.keys(formErrors).length === 0) {
-      setIsSubmit(true);
-    }
+    setIsSubmit(true);
   };
 
+  // if (Object.keys(formErrors).length === 0)
   const validate = (values) => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
@@ -36,18 +38,17 @@ const LoginForm = () => {
     }
     if (!values.password) {
       errors.password = "Enter a Password";
-    } else if (values.password.length < 3) {
+    } else if (values.password.length <= 3) {
       errors.password = "Password must be more than 3 characters";
     } else if (values.password.length > 10) {
       errors.password = "Password must be less than 10 characters";
     }
-    console.log(errors);
     return errors;
   };
 
   return (
     <div className={styles.LoginForm}>
-      {IsSubmit ? (
+      {Object.keys(formErrors).length === 0 && IsSubmit ? (
         <p className={`${styles.success} ${styles.view}`}>
           Submission Successful
         </p>
@@ -67,6 +68,7 @@ const LoginForm = () => {
             id="username"
             name="username"
           />
+          <small className={styles.error}>{formErrors.username}</small>
         </div>
         <div className={styles.box}>
           <label htmlFor="email">Email</label>
@@ -77,6 +79,7 @@ const LoginForm = () => {
             id="email"
             name="email"
           />
+          <small className={styles.error}>{formErrors.email}</small>
         </div>
         <div className={styles.box}>
           <label htmlFor="password">Password</label>
@@ -87,6 +90,7 @@ const LoginForm = () => {
             id="password"
             name="password"
           />
+          <small className={styles.error}>{formErrors.password}</small>
         </div>
         <div className={styles.btn_bx}>
           <button onClick={handleReset}>Reset</button>
